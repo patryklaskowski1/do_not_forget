@@ -1,4 +1,4 @@
-import 'package:do_not_forget/home/home_page.dart';
+import 'package:do_not_forget/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
