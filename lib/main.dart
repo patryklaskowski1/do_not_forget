@@ -30,6 +30,15 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: const Color.fromARGB(129, 41, 37, 37),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: const Color.fromARGB(129, 41, 37, 37),
+          child: const Icon(
+            Icons.add,
+            color: Color.fromARGB(255, 3, 253, 241),
+            size: 42,
+          ),
+        ),
       ),
     );
   }
