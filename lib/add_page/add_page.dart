@@ -32,8 +32,8 @@ class AddPage extends StatelessWidget {
           horizontal: 30,
           vertical: 80,
         ),
-        children: const [
-          TextField(
+        children: [
+          const TextField(
             style: TextStyle(
               color: Color.fromARGB(255, 3, 253, 241),
             ),
@@ -57,8 +57,8 @@ class AddPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 40),
-          TextField(
+          const SizedBox(height: 40),
+          const TextField(
             style: TextStyle(
               color: Color.fromARGB(255, 3, 253, 241),
             ),
@@ -79,6 +79,20 @@ class AddPage extends StatelessWidget {
                   color: Color.fromARGB(255, 3, 253, 241),
                   fontSize: 22,
                 ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(129, 41, 37, 37),
+            ),
+            child: const Text(
+              'Choose release date',
+              style: TextStyle(
+                color: Color.fromARGB(255, 3, 253, 241),
+                fontSize: 16,
               ),
             ),
           ),
