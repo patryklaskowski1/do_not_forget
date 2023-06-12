@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Do Not Forget',
       home: Scaffold(
+        backgroundColor: const Color.fromARGB(255, 114, 113, 113),
         appBar: AppBar(
           title: const Text(
             'Do Not Forget',
@@ -23,8 +24,9 @@ class MyApp extends StatelessWidget {
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
-                bottom:
-                    Radius.elliptical(MediaQuery.of(context).size.width, 80.0)),
+              bottom:
+                  Radius.elliptical(MediaQuery.of(context).size.width, 80.0),
+            ),
           ),
           toolbarHeight: 120,
           centerTitle: true,
