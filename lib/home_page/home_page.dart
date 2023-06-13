@@ -1,3 +1,4 @@
+import 'package:do_not_forget/add_page/add_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -28,7 +29,14 @@ class HomePage extends StatelessWidget {
         backgroundColor: const Color.fromARGB(129, 41, 37, 37),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const AddPage(),
+            ),
+          );
+        },
         backgroundColor: const Color.fromARGB(129, 41, 37, 37),
         child: const Icon(
           Icons.add,
