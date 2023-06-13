@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "383314754766",
+    "project_id": "do-not-forget-app-project",
+    "storage_bucket": "do-not-forget-app-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383314754766:android:24bc6946b7b95044c2649f",
+        "android_client_info": {
+          "package_name": "com.patryklaskowski.do_not_forget"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "383314754766-29f18pl1ev7ujtf1k8919tng2cr035pf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNlpJ8HVh16YIQNRtPWrSCCQZIa8SBmko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "383314754766-29f18pl1ev7ujtf1k8919tng2cr035pf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
