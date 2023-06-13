@@ -8,7 +8,7 @@
 PRODUCT_NAME = do_not_forget
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.doNotForget
+PRODUCT_BUNDLE_IDENTIFIER = com.patryklaskowski.doNotForget
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2023 com.patryklaskowski. All rights reserved.

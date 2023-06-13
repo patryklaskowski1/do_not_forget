@@ -1,4 +1,4 @@
-package com.example.do_not_forget
+package com.patryklaskowski.do_not_forget
 
 import io.flutter.embedding.android.FlutterActivity
 
