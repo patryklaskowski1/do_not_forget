@@ -10,6 +10,9 @@ class AddPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 114, 113, 113),
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Color.fromARGB(255, 3, 253, 241),
+        ),
         title: const Text(
           "Add Event",
           style: TextStyle(
