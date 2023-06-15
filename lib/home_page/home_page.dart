@@ -140,7 +140,8 @@ class _ListViewItem extends StatelessWidget {
                         Text(
                           document['title'],
                           style: const TextStyle(
-                            fontSize: 20.0,
+                            fontSize: 28,
+                            color: Color.fromARGB(255, 3, 253, 241),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -148,8 +149,8 @@ class _ListViewItem extends StatelessWidget {
                         Text(
                           document['description'],
                           style: const TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 22,
+                            color: Color.fromARGB(255, 3, 253, 241),
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -157,6 +158,10 @@ class _ListViewItem extends StatelessWidget {
                           (document['release_date'] as Timestamp)
                               .toDate()
                               .toString(),
+                          style: const TextStyle(
+                            color: Color.fromARGB(255, 3, 253, 241),
+                            fontSize: 16,
+                          ),
                         ),
                       ],
                     ),
@@ -164,7 +169,7 @@ class _ListViewItem extends StatelessWidget {
                 ),
                 Container(
                   decoration: const BoxDecoration(
-                    color: Colors.white70,
+                    color: Color.fromARGB(129, 41, 37, 37),
                   ),
                   margin: const EdgeInsets.all(10),
                   padding: const EdgeInsets.all(10),
@@ -173,11 +178,18 @@ class _ListViewItem extends StatelessWidget {
                       Text(
                         '0',
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 26,
+                          color: Color.fromARGB(255, 3, 253, 241),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('days left'),
+                      Text(
+                        'days left',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 3, 253, 241),
+                          fontSize: 20,
+                        ),
+                      ),
                     ],
                   ),
                 ),
