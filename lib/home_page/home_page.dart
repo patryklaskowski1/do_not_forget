@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:do_not_forget/add_page/add_page.dart';
 import 'package:flutter/material.dart';
 
@@ -44,6 +45,13 @@ class HomePage extends StatelessWidget {
           size: 42,
         ),
       ),
+      body: StreamBuilder<Object>(
+          stream: FirebaseFirestore.instance.collection("items").snapshots(),
+          builder: (context, snapshot) {
+            return ListView(
+              children: [],
+            );
+          }),
     );
   }
 }
