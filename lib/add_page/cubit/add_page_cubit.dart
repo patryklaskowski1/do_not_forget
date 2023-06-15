@@ -15,8 +15,8 @@ class AddPageCubit extends Cubit<AddPageState> {
     try {
       await FirebaseFirestore.instance.collection('items').add(
         {
-          'Title': title,
-          'Description': description,
+          'title': title,
+          'description': description,
           'release_date': releaseDate,
         },
       );
