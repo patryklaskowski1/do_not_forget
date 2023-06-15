@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddPage extends StatefulWidget {
   const AddPage({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<AddPage> createState() => _AddPageState();
@@ -47,8 +47,8 @@ class _AddPageState extends State<AddPage> {
               backgroundColor: const Color.fromARGB(129, 41, 37, 37),
               actions: [
                 IconButton(
-                  onPressed: _description == null ||
-                          _title == null ||
+                  onPressed: _title == null ||
+                          _description == null ||
                           _releaseDate == null
                       ? null
                       : () {

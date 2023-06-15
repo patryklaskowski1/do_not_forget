@@ -1,6 +1,5 @@
 part of 'add_page_cubit.dart';
 
-@immutable
 class AddPageState {
   const AddPageState({
     this.saved = false,
