@@ -12,8 +12,8 @@ class AddPage extends StatefulWidget {
 }
 
 class _AddPageState extends State<AddPage> {
-  String? _title;
   String? _description;
+  String? _title;
   DateTime? _releaseDate;
 
   @override
@@ -45,81 +45,144 @@ class _AddPageState extends State<AddPage> {
               toolbarHeight: 120,
               centerTitle: true,
               backgroundColor: const Color.fromARGB(129, 41, 37, 37),
-            ),
-            body: ListView(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 30,
-                vertical: 80,
-              ),
-              children: [
-                const TextField(
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 3, 253, 241),
-                  ),
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Color.fromARGB(255, 3, 253, 241), width: 5),
-                    ),
-                    hintText: 'visit to the cinema',
-                    hintStyle: TextStyle(
-                      color: Color.fromARGB(255, 3, 253, 241),
-                      fontSize: 18,
-                    ),
-                    label: Text(
-                      'Title',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 3, 253, 241),
-                        fontSize: 22,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 40),
-                const TextField(
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 3, 253, 241),
-                  ),
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Color.fromARGB(255, 3, 253, 241), width: 5),
-                    ),
-                    hintText: 'Avatar premiere',
-                    hintStyle: TextStyle(
-                      color: Color.fromARGB(255, 3, 253, 241),
-                      fontSize: 18,
-                    ),
-                    label: Text(
-                      'Description',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 3, 253, 241),
-                        fontSize: 22,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(129, 41, 37, 37),
-                  ),
-                  child: const Text(
-                    'Choose release date',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 3, 253, 241),
-                      fontSize: 16,
-                    ),
-                  ),
+              actions: [
+                IconButton(
+                  onPressed: _description == null ||
+                          _title == null ||
+                          _releaseDate == null
+                      ? null
+                      : () {
+                          context.read<AddPageCubit>().add(
+                                _title!,
+                                _description!,
+                                _releaseDate!,
+                              );
+                        },
+                  icon: const Icon(Icons.check),
                 ),
               ],
+            ),
+            body: _AddPageBody(
+              onTitleChanged: (newValue) {
+                setState(() {
+                  _title = newValue;
+                });
+              },
+              onDescriptionChanged: (newValue) {
+                setState(() {
+                  _description = newValue;
+                });
+              },
+              onDateChanged: (newValue) {
+                setState(() {
+                  _releaseDate = newValue;
+                });
+              },
+              selectedDateFormatted: _releaseDate?.toIso8601String(),
             ),
           );
         },
       ),
+    );
+  }
+}
+
+class _AddPageBody extends StatelessWidget {
+  const _AddPageBody({
+    Key? key,
+    required this.onTitleChanged,
+    required this.onDescriptionChanged,
+    required this.onDateChanged,
+    this.selectedDateFormatted,
+  }) : super(key: key);
+
+  final Function(String) onTitleChanged;
+  final Function(String) onDescriptionChanged;
+  final Function(DateTime?) onDateChanged;
+  final String? selectedDateFormatted;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 30,
+        vertical: 20,
+      ),
+      children: [
+        const TextField(
+          style: TextStyle(
+            color: Color.fromARGB(255, 3, 253, 241),
+          ),
+          textAlign: TextAlign.center,
+          decoration: InputDecoration(
+            focusedBorder: OutlineInputBorder(
+              borderSide:
+                  BorderSide(color: Color.fromARGB(255, 3, 253, 241), width: 5),
+            ),
+            hintText: 'visit to the cinema',
+            hintStyle: TextStyle(
+              color: Color.fromARGB(255, 3, 253, 241),
+              fontSize: 18,
+            ),
+            label: Text(
+              'Title',
+              style: TextStyle(
+                color: Color.fromARGB(255, 3, 253, 241),
+                fontSize: 22,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 40),
+        const TextField(
+          style: TextStyle(
+            color: Color.fromARGB(255, 3, 253, 241),
+          ),
+          textAlign: TextAlign.center,
+          decoration: InputDecoration(
+            focusedBorder: OutlineInputBorder(
+              borderSide:
+                  BorderSide(color: Color.fromARGB(255, 3, 253, 241), width: 5),
+            ),
+            hintText: 'Avatar premiere',
+            hintStyle: TextStyle(
+              color: Color.fromARGB(255, 3, 253, 241),
+              fontSize: 18,
+            ),
+            label: Text(
+              'Description',
+              style: TextStyle(
+                color: Color.fromARGB(255, 3, 253, 241),
+                fontSize: 22,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () async {
+            final selectedDate = await showDatePicker(
+              context: context,
+              initialDate: DateTime.now(),
+              firstDate: DateTime.now(),
+              lastDate: DateTime.now().add(
+                const Duration(days: 365 * 10),
+              ),
+            );
+            onDateChanged(selectedDate);
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color.fromARGB(129, 41, 37, 37),
+          ),
+          child: Text(
+            selectedDateFormatted ?? 'Choose release date',
+            style: const TextStyle(
+              color: Color.fromARGB(255, 3, 253, 241),
+              fontSize: 16,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
