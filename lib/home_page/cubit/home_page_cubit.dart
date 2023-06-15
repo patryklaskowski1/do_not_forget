@@ -26,4 +26,24 @@ class HomePageCubit extends Cubit<HomePageState> {
         },
       );
   }
+
+  Future<void> remove({required String documnetID}) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('items')
+          .doc(documnetID)
+          .delete();
+    } catch (error) {
+      emit(
+        const HomePageState(removingErrorOccured: true),
+      );
+      start();
+    }
+  }
+
+  @override
+  Future<void> close() {
+    _streamSubscription?.cancel();
+    return super.close();
+  }
 }
