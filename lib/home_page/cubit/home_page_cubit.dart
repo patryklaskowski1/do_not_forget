@@ -27,11 +27,11 @@ class HomePageCubit extends Cubit<HomePageState> {
       );
   }
 
-  Future<void> remove({required String documnetID}) async {
+  Future<void> remove({required String documentID}) async {
     try {
       await FirebaseFirestore.instance
           .collection('items')
-          .doc(documnetID)
+          .doc(documentID)
           .delete();
     } catch (error) {
       emit(
