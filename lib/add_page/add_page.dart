@@ -109,12 +109,13 @@ class _AddPageBody extends StatelessWidget {
         vertical: 20,
       ),
       children: [
-        const TextField(
-          style: TextStyle(
+        TextField(
+          onChanged: onTitleChanged,
+          style: const TextStyle(
             color: Color.fromARGB(255, 3, 253, 241),
           ),
           textAlign: TextAlign.center,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             focusedBorder: OutlineInputBorder(
               borderSide:
                   BorderSide(color: Color.fromARGB(255, 3, 253, 241), width: 5),
@@ -134,12 +135,13 @@ class _AddPageBody extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 40),
-        const TextField(
-          style: TextStyle(
+        TextField(
+          onChanged: onDescriptionChanged,
+          style: const TextStyle(
             color: Color.fromARGB(255, 3, 253, 241),
           ),
           textAlign: TextAlign.center,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             focusedBorder: OutlineInputBorder(
               borderSide:
                   BorderSide(color: Color.fromARGB(255, 3, 253, 241), width: 5),
