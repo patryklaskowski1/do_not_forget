@@ -20,68 +20,73 @@ class _AddPageState extends State<AddPage> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AddPageCubit(),
-      child: BlocBuilder<AddPageCubit, AddPageState>(
-        builder: (context, state) {
-          return Scaffold(
-            backgroundColor: const Color.fromARGB(255, 114, 113, 113),
-            appBar: AppBar(
-              iconTheme: const IconThemeData(
-                color: Color.fromARGB(255, 3, 253, 241),
-              ),
-              title: const Text(
-                "Add Event",
-                style: TextStyle(
-                  color: Color.fromARGB(255, 3, 253, 241),
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.vertical(
-                  bottom: Radius.elliptical(
-                      MediaQuery.of(context).size.width, 80.0),
-                ),
-              ),
-              toolbarHeight: 120,
-              centerTitle: true,
-              backgroundColor: const Color.fromARGB(129, 41, 37, 37),
-              actions: [
-                IconButton(
-                  onPressed: _title == null ||
-                          _description == null ||
-                          _releaseDate == null
-                      ? null
-                      : () {
-                          context.read<AddPageCubit>().add(
-                                _title!,
-                                _description!,
-                                _releaseDate!,
-                              );
-                        },
-                  icon: const Icon(Icons.check),
-                ),
-              ],
-            ),
-            body: _AddPageBody(
-              onTitleChanged: (newValue) {
-                setState(() {
-                  _title = newValue;
-                });
-              },
-              onDescriptionChanged: (newValue) {
-                setState(() {
-                  _description = newValue;
-                });
-              },
-              onDateChanged: (newValue) {
-                setState(() {
-                  _releaseDate = newValue;
-                });
-              },
-              selectedDateFormatted: _releaseDate?.toIso8601String(),
-            ),
-          );
+      child: BlocListener<AddPageCubit, AddPageState>(
+        listener: (context, state) {
+          
         },
+        child: BlocBuilder<AddPageCubit, AddPageState>(
+          builder: (context, state) {
+            return Scaffold(
+              backgroundColor: const Color.fromARGB(255, 114, 113, 113),
+              appBar: AppBar(
+                iconTheme: const IconThemeData(
+                  color: Color.fromARGB(255, 3, 253, 241),
+                ),
+                title: const Text(
+                  "Add Event",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 3, 253, 241),
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(
+                    bottom: Radius.elliptical(
+                        MediaQuery.of(context).size.width, 80.0),
+                  ),
+                ),
+                toolbarHeight: 120,
+                centerTitle: true,
+                backgroundColor: const Color.fromARGB(129, 41, 37, 37),
+                actions: [
+                  IconButton(
+                    onPressed: _title == null ||
+                            _description == null ||
+                            _releaseDate == null
+                        ? null
+                        : () {
+                            context.read<AddPageCubit>().add(
+                                  _title!,
+                                  _description!,
+                                  _releaseDate!,
+                                );
+                          },
+                    icon: const Icon(Icons.check),
+                  ),
+                ],
+              ),
+              body: _AddPageBody(
+                onTitleChanged: (newValue) {
+                  setState(() {
+                    _title = newValue;
+                  });
+                },
+                onDescriptionChanged: (newValue) {
+                  setState(() {
+                    _description = newValue;
+                  });
+                },
+                onDateChanged: (newValue) {
+                  setState(() {
+                    _releaseDate = newValue;
+                  });
+                },
+                selectedDateFormatted: _releaseDate?.toIso8601String(),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
