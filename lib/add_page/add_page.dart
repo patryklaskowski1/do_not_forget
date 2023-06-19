@@ -22,7 +22,9 @@ class _AddPageState extends State<AddPage> {
       create: (context) => AddPageCubit(),
       child: BlocListener<AddPageCubit, AddPageState>(
         listener: (context, state) {
-          
+          if (state.saved) {
+            Navigator.of(context).pop();
+          }
         },
         child: BlocBuilder<AddPageCubit, AddPageState>(
           builder: (context, state) {
