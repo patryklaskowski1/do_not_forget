@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'package:do_not_forget/models/item_model.dart';
 
 part 'home_page_state.dart';
 
@@ -18,7 +18,15 @@ class HomePageCubit extends Cubit<HomePageState> {
         .snapshots()
         .listen(
       (items) {
-        emit(HomePageState(items: items));
+        final itemModels = items.docs.map((doc) {
+          return ItemModel(
+            id: doc.get('id'),
+            title: doc['title'],
+            description: doc['decription'],
+            releaseDate: (doc['release_date'] as Timestamp).toDate(),
+          );
+        }).toList();
+        emit(HomePageState(items: itemModels));
       },
     )..onError(
         (error) {
