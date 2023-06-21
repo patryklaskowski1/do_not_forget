@@ -1,7 +1,21 @@
 import 'package:bloc/bloc.dart';
+import 'package:do_not_forget/models/item_model.dart';
+import 'package:do_not_forget/repositories/items_repository.dart';
 
 part 'details_state.dart';
 
 class DetailsCubit extends Cubit<DetailsState> {
-  DetailsCubit() : super(DetailsState());
+  DetailsCubit(this._itemsRepository)
+      : super(
+          DetailsState(
+            itemModel: null,
+          ),
+        );
+
+  final ItemsRepository _itemsRepository;
+
+  Future<void> getItemWithID(String id) async {
+    final itemModel = await _itemsRepository.get(id: id);
+    emit(DetailsState(itemModel: itemModel));
+  }
 }

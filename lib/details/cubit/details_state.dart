@@ -1,3 +1,7 @@
 part of 'details_cubit.dart';
 
-class DetailsState {}
+class DetailsState {
+  final ItemModel? itemModel;
+
+  DetailsState({required this.itemModel});
+}
