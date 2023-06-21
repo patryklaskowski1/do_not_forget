@@ -167,7 +167,7 @@ class _ListViewItem extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
                           Text(
-                            itemModel.releaseDate.toString(),
+                            itemModel.dateFormatted(),
                             style: const TextStyle(
                               color: Color.fromARGB(255, 3, 253, 241),
                               fontSize: 16,
