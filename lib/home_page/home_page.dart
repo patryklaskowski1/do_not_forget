@@ -173,17 +173,17 @@ class _ListViewItem extends StatelessWidget {
                   ),
                   margin: const EdgeInsets.all(10),
                   padding: const EdgeInsets.all(10),
-                  child: const Column(
+                  child: Column(
                     children: [
                       Text(
-                        '0',
-                        style: TextStyle(
+                        itemModel.daysLeft(),
+                        style: const TextStyle(
                           fontSize: 26,
                           color: Color.fromARGB(255, 3, 253, 241),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text(
+                      const Text(
                         'days left',
                         style: TextStyle(
                           color: Color.fromARGB(255, 3, 253, 241),
