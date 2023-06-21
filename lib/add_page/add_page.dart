@@ -1,4 +1,5 @@
 import 'package:do_not_forget/add_page/cubit/add_page_cubit.dart';
+import 'package:do_not_forget/repositories/items_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,7 +20,7 @@ class _AddPageState extends State<AddPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AddPageCubit(),
+      create: (context) => AddPageCubit(ItemsRepository()),
       child: BlocListener<AddPageCubit, AddPageState>(
         listener: (context, state) {
           if (state.saved) {

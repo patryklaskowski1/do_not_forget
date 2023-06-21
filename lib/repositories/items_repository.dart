@@ -24,4 +24,18 @@ class ItemsRepository {
   Future<void> delete({required String id}) async {
     await FirebaseFirestore.instance.collection('items').doc(id).delete();
   }
+
+  Future<void> add(
+    String title,
+    String description,
+    DateTime releaseDate,
+  ) async {
+      await FirebaseFirestore.instance.collection('items').add(
+        {
+          'title': title,
+          'description': description,
+          'release_date': releaseDate,
+        },
+      );
+  }
 }
