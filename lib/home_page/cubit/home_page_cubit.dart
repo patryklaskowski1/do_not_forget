@@ -20,9 +20,9 @@ class HomePageCubit extends Cubit<HomePageState> {
       (items) {
         final itemModels = items.docs.map((doc) {
           return ItemModel(
-            id: doc.get('id'),
+            id: doc.id,
             title: doc['title'],
-            description: doc['decription'],
+            description: doc['description'],
             releaseDate: (doc['release_date'] as Timestamp).toDate(),
           );
         }).toList();
