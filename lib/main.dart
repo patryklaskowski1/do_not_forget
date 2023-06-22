@@ -1,5 +1,5 @@
+import 'package:do_not_forget/auth/page/auth_gate.dart';
 import 'package:do_not_forget/firebase_options.dart';
-import 'package:do_not_forget/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Do Not Forget',
-      home: HomePage(),
+      home: AuthGate(),
     );
   }
 }
