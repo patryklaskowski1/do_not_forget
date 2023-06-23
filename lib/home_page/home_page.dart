@@ -1,4 +1,5 @@
 import 'package:do_not_forget/add_page/add_page.dart';
+import 'package:do_not_forget/auth/page/user_profile.dart';
 import 'package:do_not_forget/details/details_page.dart';
 import 'package:do_not_forget/home_page/cubit/home_page_cubit.dart';
 import 'package:do_not_forget/models/item_model.dart';
@@ -32,6 +33,19 @@ class HomePage extends StatelessWidget {
         toolbarHeight: 120,
         centerTitle: true,
         backgroundColor: const Color.fromARGB(129, 41, 37, 37),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const UserProfile(),
+                  ),
+                );
+              },
+              icon: const Icon(
+                Icons.account_circle_rounded,
+              ))
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
