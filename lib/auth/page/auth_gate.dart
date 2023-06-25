@@ -13,6 +13,31 @@ class AuthGate extends StatelessWidget {
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return SignInScreen(
+            subtitleBuilder: (context, action) {
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 18),
+                child: Text(
+                  action == AuthAction.signIn
+                      ? 'Welcome to App "DO NOT FORGET"! Please sign in to continue.'
+                      : 'Welcome to App "DO NOT FORGET"! Please create an account to continue',
+                  style: const TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              );
+            },
+            footerBuilder: (context, _) {
+              return const Padding(
+                padding: EdgeInsets.only(top: 40),
+                child: Text(
+                  'By signing in, you agree to our terms and conditions.',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 18,
+                  ),
+                ),
+              );
+            },
             providers: [
               EmailAuthProvider(),
             ],

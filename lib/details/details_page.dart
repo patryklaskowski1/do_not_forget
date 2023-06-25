@@ -74,80 +74,122 @@ class _ListViewItem extends StatelessWidget {
         vertical: 10,
         horizontal: 30,
       ),
-      child: Container(
-        decoration: const BoxDecoration(
-          color: Colors.black12,
-        ),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(10),
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          itemModel.title,
-                          style: const TextStyle(
-                            fontSize: 28,
-                            color: Color.fromARGB(255, 3, 253, 241),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          itemModel.description,
-                          style: const TextStyle(
-                            fontSize: 22,
-                            color: Color.fromARGB(255, 3, 253, 241),
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          itemModel.dateFormatted(),
-                          style: const TextStyle(
-                            color: Color.fromARGB(255, 3, 253, 241),
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
+      child: Column(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Title:',
+                    style: styleTextHeading(),
+                  ),
+                  const SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 80,
+                    ),
+                    child: Text(
+                      itemModel.title,
+                      style: styleReceivedData(),
                     ),
                   ),
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(129, 41, 37, 37),
+                ],
+              ),
+              const SizedBox(height: 40),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Description:',
+                    style: styleTextHeading(),
                   ),
-                  margin: const EdgeInsets.all(10),
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
+                  const SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 80,
+                    ),
+                    child: Text(
+                      itemModel.description,
+                      style: styleReceivedData(),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 40),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Data:',
+                    style: styleTextHeading(),
+                  ),
+                  const SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 80,
+                    ),
+                    child: Text(
+                      itemModel.dateFormatted(),
+                      style: styleReceivedData(),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 40),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Time to event:',
+                    style: styleTextHeading(),
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
                     children: [
-                      Text(
-                        itemModel.daysLeft(),
-                        style: const TextStyle(
-                          fontSize: 26,
-                          color: Color.fromARGB(255, 3, 253, 241),
-                          fontWeight: FontWeight.bold,
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 80,
+                        ),
+                        child: Text(
+                          itemModel.daysLeft(),
+                          style: styleReceivedData(),
                         ),
                       ),
-                      const Text(
+                      const SizedBox(width: 10),
+                      Text(
                         'days left',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 3, 253, 241),
-                          fontSize: 20,
-                        ),
+                        style: styleReceivedData(),
                       ),
                     ],
                   ),
-                ),
-              ],
-            ),
-          ],
-        ),
+                ],
+              ),
+            ],
+          ),
+        ],
       ),
+    );
+  }
+
+  TextStyle styleReceivedData() {
+    return const TextStyle(
+      color: Color.fromARGB(255, 3, 253, 241),
+      fontSize: 24,
+    );
+  }
+
+  TextStyle styleTextHeading() {
+    return const TextStyle(
+      fontSize: 20,
+      color: Colors.transparent,
+      shadows: [Shadow(offset: Offset(0, -10), color: Colors.white)],
+      decoration: TextDecoration.underline,
+      decorationStyle: TextDecorationStyle.wavy,
+      decorationColor: Colors.white,
+      decorationThickness: 3,
     );
   }
 }
