@@ -34,17 +34,22 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(129, 41, 37, 37),
         actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const UserProfile(),
-                  ),
-                );
-              },
-              icon: const Icon(
-                Icons.account_circle_rounded,
-              ))
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const UserProfile(),
+                    ),
+                  );
+                },
+                icon: const Icon(
+                  Icons.account_circle_rounded,
+                  color: Color.fromARGB(255, 3, 253, 241),
+                  size: 38,
+                )),
+          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
