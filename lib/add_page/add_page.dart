@@ -141,8 +141,8 @@ class _AddPageBody extends StatelessWidget {
             ),
             hintText: 'visit to the cinema',
             hintStyle: TextStyle(
-              color: Color.fromARGB(255, 3, 253, 241),
-              fontSize: 18,
+              color: Colors.grey,
+              fontSize: 14,
             ),
             label: Text(
               'Title',
@@ -167,8 +167,8 @@ class _AddPageBody extends StatelessWidget {
             ),
             hintText: 'Avatar premiere',
             hintStyle: TextStyle(
-              color: Color.fromARGB(255, 3, 253, 241),
-              fontSize: 18,
+              color: Colors.grey,
+              fontSize: 14,
             ),
             label: Text(
               'Description',
