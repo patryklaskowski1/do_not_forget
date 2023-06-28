@@ -1,3 +1,4 @@
+import 'package:do_not_forget/auth/page/user_profile.dart';
 import 'package:do_not_forget/details/cubit/details_cubit.dart';
 import 'package:do_not_forget/models/item_model.dart';
 import 'package:do_not_forget/repositories/items_repository.dart';
@@ -17,6 +18,10 @@ class DetailsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 114, 113, 113),
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Color.fromARGB(255, 3, 253, 241),
+          size: 28,
+        ),
         title: const Text(
           'Details',
           style: TextStyle(
@@ -33,6 +38,24 @@ class DetailsPage extends StatelessWidget {
         toolbarHeight: 120,
         centerTitle: true,
         backgroundColor: const Color.fromARGB(129, 41, 37, 37),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const UserProfile(),
+                    ),
+                  );
+                },
+                icon: const Icon(
+                  Icons.account_circle_rounded,
+                  color: Color.fromARGB(255, 3, 253, 241),
+                  size: 38,
+                )),
+          )
+        ],
       ),
       body: BlocProvider(
         create: (context) => DetailsCubit(ItemsRepository())..getItemWithID(id),

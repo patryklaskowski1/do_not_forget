@@ -43,6 +43,7 @@ class _AddPageState extends State<AddPage> {
               appBar: AppBar(
                 iconTheme: const IconThemeData(
                   color: Color.fromARGB(255, 3, 253, 241),
+                  size: 28,
                 ),
                 title: const Text(
                   "Add Event",
