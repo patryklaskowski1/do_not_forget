@@ -6,12 +6,28 @@ class UserProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppBar(
-      title: const Text(
-        'Profile',
-      ),
-    );
     return ProfileScreen(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Color.fromARGB(255, 3, 253, 241),
+        ),
+        title: const Text(
+          "Profile",
+          style: TextStyle(
+            color: Color.fromARGB(255, 3, 253, 241),
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.elliptical(MediaQuery.of(context).size.width, 80.0),
+          ),
+        ),
+        toolbarHeight: 120,
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(129, 41, 37, 37),
+      ),
       providers: [
         EmailAuthProvider(),
       ],
@@ -22,7 +38,7 @@ class UserProfile extends StatelessWidget {
           },
         ),
       ],
-      avatarSize: 58,
+      avatarSize: 80,
     );
   }
 }
