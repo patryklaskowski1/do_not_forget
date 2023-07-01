@@ -34,7 +34,10 @@ dev_dependencies:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
   flutter_native_splash: ^2.3.1
-  
+
+flutter_native_splash:
+  color: "#727171"
+  image: images/splash/splash.png  
 flutter_icons:
   android: "launcher_icon"
   ios: true
