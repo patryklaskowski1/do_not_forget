@@ -36,6 +36,20 @@ class UserProfile extends StatelessWidget {
         SignedOutAction(
           (context) {
             Navigator.of(context).pop();
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(
+                  'You have been logged out !!!',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 3, 253, 241),
+                    fontSize: 18,
+                  ),
+                ),
+                backgroundColor: Color.fromARGB(129, 41, 37, 37),
+                padding: EdgeInsets.all(20),
+                behavior: SnackBarBehavior.floating,
+              ),
+            );
           },
         ),
       ],
