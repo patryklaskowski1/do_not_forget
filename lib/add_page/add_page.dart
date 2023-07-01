@@ -74,6 +74,19 @@ class _AddPageState extends State<AddPage> {
                                   _description!,
                                   _releaseDate!,
                                 );
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(const SnackBar(
+                              content: Text(
+                                'Your event has been added !!!',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 3, 253, 241),
+                                  fontSize: 18,
+                                ),
+                              ),
+                              backgroundColor: Color.fromARGB(129, 41, 37, 37),
+                              padding: EdgeInsets.all(20),
+                              behavior: SnackBarBehavior.floating,
+                            ));
                           },
                     icon: const Icon(Icons.check),
                   ),
