@@ -7,6 +7,7 @@ class UserProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProfileScreen(
+      avatarPlaceholderColor: Color.fromARGB(255, 3, 253, 241),
       appBar: AppBar(
         iconTheme: const IconThemeData(
           color: Color.fromARGB(255, 3, 253, 241),
