@@ -1,6 +1,6 @@
 # do_not_forget
 
-<h1 align="center" id="title">do_not_forget</h1>
+<h1 align="center" id="title">Do Not Forget</h1>
 
 <p id="description"> Mobile App to do list - don't forget important events </p>
 
