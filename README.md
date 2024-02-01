@@ -1,7 +1,5 @@
 # do_not_forget
 
-# gaming_shop_ui
-
 <h1 align="center" id="title">do_not_forget</h1>
 
 <p id="description"> Mobile App to do list - don't forget important events </p>
@@ -33,4 +31,5 @@ Technologies used in the project:
 
 <h2> Author:</h2>
 
-[@patryklaskowski1](https://github.com/patryklaskowski1)  
+[@patryklaskowski1](https://github.com/patryklaskowski1)
+[@LinkedinProfile](https://www.linkedin.com/in/patryk-l-363329189/) 
