@@ -1,16 +1,36 @@
 # do_not_forget
 
-A new Flutter project.
+# gaming_shop_ui
 
-## Getting Started
+<h1 align="center" id="title">do_not_forget</h1>
 
-This project is a starting point for a Flutter application.
+<p id="description"> Mobile App to do list - don't forget important events </p>
 
-A few resources to get you started if this is your first Flutter project:
+<h2>Project Screenshots:</h2>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ <img src="https://i.ibb.co/jWPR9WQ/HomePage.png" alt="project-screenshot" width="285" height="590">
+ <img src="https://i.ibb.co/z2p88Rr/Details-Page.png" alt="project-screenshot" width="285" height="590">
+
+</div>
+
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+ <img src="https://i.ibb.co/tXTBSSL/Remove-Item.png" alt="project-screenshot" width="285" height="590">
+  <img src="https://i.ibb.co/Ws1Ycyr/AddPage.png" alt="project-screenshot" width="285" height="590">
+  
+</div>
+
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+
+<h2> Built with</h2>
+
+Technologies used in the project:
+
+*   Flutter
+*   Dart
+*   Firebase
+
+<h2> Author:</h2>
+
+[@patryklaskowski1](https://github.com/patryklaskowski1)  
